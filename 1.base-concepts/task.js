@@ -27,21 +27,21 @@ function solveEquation(a, b, c) {
 
 
 
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
+function calculateTotalMortgage(percent, contribution, amount, date) {
   let per = parseInt(percent) / 100 / 12; 
   let con = parseInt(contribution); 	  
   let am = parseInt(amount);  			  
   if (isNaN(per) || per < 0) {
-     return `"Процентная ставка" неверная "${percent}"`;
+     return false;
    } else if (isNaN(con) || con < 0) {
-     return `"Начальный взнос" неверный "${contribution}"`;
+     return false;
    } else if (isNaN(am) || am < 0) {
-     return `"Общая стоимость" неверная "${amount}"`;
+     return false;
    } else {
     
-    let today = new Date();
+    let today = new date();
     if (today.getFullYear() > date.getFullYear() || today.getMonth() > date.getMonth()) {
-    return `"срок ипотеки" неверный ${date}`;
+    return false;
   } else {
     let s = am - con;						 
       let n = date.getMonth() - today.getMonth() + (12*(date.getFullYear() - today.getFullYear())); 
